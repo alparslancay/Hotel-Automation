@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97F84A0B-3661-4FDF-94B6-F7F37F23616D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Otel_Otomasyon</RootNamespace>
+    <AssemblyName>Otel Otomasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\Repository\Abstractions\IRepository.cs" />
+    <Compile Include="OtelIslemleri.cs" />
+    <Compile Include="PersonelIslemleri.cs" />
+    <Compile Include="UI Forms\UIOtelBilgiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UIOtelBilgiForm.Designer.cs">
+      <DependentUpon>UIOtelBilgiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\UIMusteriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UIMusteriForm.Designer.cs">
+      <DependentUpon>UIMusteriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkilileriPersonelBilgiIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkilileriPersonelBilgiIslemleri.Designer.cs">
+      <DependentUpon>UISistemYetkilileriPersonelBilgiIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkilileriPersonelListelemeIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkilileriPersonelListelemeIslemleri.Designer.cs">
+      <DependentUpon>UISistemYetkilileriPersonelListelemeIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkiliOtelIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UISistemYetkiliOtelIslemleri.Designer.cs">
+      <DependentUpon>UISistemYetkiliOtelIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Forms\UIYetkiliForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UIYetkiliForm.Designer.cs">
+      <DependentUpon>UIYetkiliForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Data\CsType.cs" />
+    <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="Helper\Repository\Concretes\YorumcuRepository.cs" />
+    <Compile Include="Helper\Repository\Concretes\PersonelRepository.cs" />
+    <Compile Include="Helper\Repository\Concretes\MusteriRepository.cs" />
+    <Compile Include="Helper\Repository\Concretes\OtelRepository.cs" />
+    <Compile Include="IlAgaci.cs" />
+    <Compile Include="UI Forms\UIGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UIGiris.Designer.cs">
+      <DependentUpon>UIGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HashMapChain.cs" />
+    <Compile Include="PuanliHeap.cs" />
+    <Compile Include="Helper\Repository\Abstractions\RepositoryADT.cs" />
+    <Compile Include="UI Forms\UIOtelYorumPuanVerme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Forms\UIOtelYorumPuanVerme.Designer.cs">
+      <DependentUpon>UIOtelYorumPuanVerme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YildizliHeap.cs" />
+    <Compile Include="HeapDugumu.cs" />
+    <Compile Include="BTDugumu.cs" />
+    <Compile Include="IlDugumu.cs" />
+    <Compile Include="Bilgi Sınıfları\Kisi.cs" />
+    <Compile Include="LinkedHashEntry.cs" />
+    <Compile Include="Bilgi Sınıfları\LinkedPersonel.cs" />
+    <Compile Include="Bilgi Sınıfları\LinkedYorumcu.cs" />
+    <Compile Include="Bilgi Sınıfları\Musteri.cs" />
+    <Compile Include="MusteriIslemleri.cs" />
+    <Compile Include="Bilgi Sınıfları\Otel.cs" />
+    <Compile Include="OtelAgaci.cs" />
+    <Compile Include="Bilgi Sınıfları\Personel.cs" />
+    <Compile Include="Bilgi Sınıfları\PersonelDugumu.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bilgi Sınıfları\Yorumcu.cs" />
+    <Compile Include="Bilgi Sınıfları\YorumcuDugumu.cs" />
+    <EmbeddedResource Include="UI Forms\UIGiris.resx">
+      <DependentUpon>UIGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UIMusteriForm.resx">
+      <DependentUpon>UIMusteriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UIOtelBilgiForm.resx">
+      <DependentUpon>UIOtelBilgiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UIOtelYorumPuanVerme.resx">
+      <DependentUpon>UIOtelYorumPuanVerme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UISistemYetkilileriPersonelBilgiIslemleri.resx">
+      <DependentUpon>UISistemYetkilileriPersonelBilgiIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UISistemYetkilileriPersonelListelemeIslemleri.resx">
+      <DependentUpon>UISistemYetkilileriPersonelListelemeIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UISistemYetkiliOtelIslemleri.resx">
+      <DependentUpon>UISistemYetkiliOtelIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Forms\UIYetkiliForm.resx">
+      <DependentUpon>UIYetkiliForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
