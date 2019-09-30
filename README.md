@@ -1,2 +1,2 @@
 # Hotel-Automation
-OOP School Project 
+Data Structure School Project 
